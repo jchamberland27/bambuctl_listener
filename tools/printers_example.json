@@ -1,0 +1,11 @@
+{
+    "3DP-###-###": {
+        "id": "3DP-###-###",
+        "ip": "1.2.3.4",
+        "access": "12345678",
+        "name": "Some name",
+        "model": "P1S | P1P | X1C | X1E",
+        "serial": "1234567890ABCDE",
+        "outlet": "# - only needed if using Wattbox to remotely control power"
+    }
+}
