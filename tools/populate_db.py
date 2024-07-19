@@ -3,10 +3,16 @@
 from redis import Redis
 import os
 import json
+import argparse
 
 print("Connecting to Redis...")
-redis_host = os.getenv("REDIS_HOST", "localhost")
-redis_port = int(os.getenv("REDIS_PORT", 6379))
+parser = argparse.ArgumentParser(description="Fill dev DB with some data")
+parser.add_argument("--redis_host", type=str, default="localhost", help="Redis host")
+parser.add_argument("--redis_port", type=int, default=6379, help="Redis port")
+args = parser.parse_args()
+
+redis_host = args.redis_host
+redis_port = args.redis_port
 db = Redis(host=redis_host, port=redis_port, decode_responses=True)
 
 print("Loading printers JSON...")
